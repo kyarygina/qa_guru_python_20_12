@@ -58,7 +58,7 @@ class RegistrationPage:
         return self
 
     def choose_hobbies(self, value):
-        self.hobby.element_by(have.exact_text(value)).click()
+        self.hobby.element_by(have.exact_text(value)).perform(command.js.scroll_into_view).should(be.visible).click()
         return self
 
     def upload_picture(self):
